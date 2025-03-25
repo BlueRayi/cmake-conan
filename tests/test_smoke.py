@@ -496,7 +496,8 @@ class TestLibcxx:
 
     @linux
     def test_clang_libcxx_linux(self, capfd, basic_cmake_project):
-        """Ensure libc++ is set when using libc++ with Clang"""
+        """Ensure libc++ is set when using libc++ with Clang
+        """
         source_dir, binary_dir = basic_cmake_project
         run(f'cmake -S {source_dir} -B {binary_dir} -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES={conan_provider} '
             '-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-stdlib=libc++" -DCMAKE_CXX_COMPILER=clang++')
